@@ -1,0 +1,160 @@
+Simple Game was selected
+Blue - Human was selected
+Red - Human was selected
+S - row:column 0:0
+O - row:column 1:1
+S - row:column 2:2
+Blue Won!
+
+General Game was selected
+Blue - Human was selected
+Red - Human was selected
+O - row:column 0:0
+O - row:column 2:2
+S - row:column 3:0
+O - row:column 3:3
+S - row:column 2:0
+S - row:column 1:1
+O - row:column 1:2
+S - row:column 1:3
+O - row:column 4:1
+S - row:column 4:2
+O - row:column 4:0
+S - row:column 3:1
+O - row:column 2:3
+S - row:column 2:4
+O - row:column 1:0
+S - row:column 0:1
+O - row:column 0:2
+S - row:column 0:3
+O - row:column 0:4
+S - row:column 1:4
+O - row:column 3:4
+S - row:column 2:1
+S - row:column 3:2
+S - row:column 4:3
+S - row:column 4:4
+Red Won!
+
+Simple Game was selected
+Blue - Human was selected
+Red - Computer was selected
+O - row:column 1:1
+O - row:column 3:1
+S - row:column 2:1
+O - row:column 1:4
+S - row:column 0:1
+Blue Won!
+
+General Game was selected
+Blue - Human was selected
+Red - Computer was selected
+O - row:column 2:1
+O - row:column 1:3
+O - row:column 1:1
+S - row:column 0:1
+S - row:column 2:2
+S - row:column 3:0
+S - row:column 0:0
+S - row:column 3:2
+S - row:column 3:3
+S - row:column 2:3
+S - row:column 2:0
+O - row:column 3:1
+General Game was selected
+Blue - Human was selected
+Red - Computer was selected
+S - row:column 1:1
+S - row:column 3:2
+S - row:column 2:2
+O - row:column 0:3
+S - row:column 4:4
+O - row:column 4:0
+S - row:column 3:4
+S - row:column 1:4
+S - row:column 2:4
+O - row:column 0:0
+S - row:column 2:1
+O - row:column 0:1
+S - row:column 4:1
+S - row:column 0:4
+O - row:column 1:2
+O - row:column 4:3
+O - row:column 3:0
+S - row:column 3:1
+S - row:column 2:0
+S - row:column 1:3
+S - row:column 1:0
+S - row:column 4:2
+O - row:column 3:3
+S - row:column 0:2
+S - row:column 2:3
+Red Won!
+
+Red Won!
+
+Red Won!
+
+Simple Game was selected
+Blue - Computer was selected
+Red - Computer was selected
+O - row:column 3:1
+S - row:column 4:0
+O - row:column 0:4
+S - row:column 1:1
+O - row:column 4:1
+S - row:column 3:3
+O - row:column 2:1
+O - row:column 0:3
+S - row:column 0:0
+S - row:column 1:3
+S - row:column 1:4
+O - row:column 0:1
+O - row:column 2:4
+S - row:column 2:0
+S - row:column 2:3
+O - row:column 4:2
+O - row:column 3:4
+O - row:column 1:2
+Red Won!
+
+General Game was selected
+Blue - Computer was selected
+Red - Computer was selected
+S - row:column 2:2
+S - row:column 4:4
+S - row:column 3:4
+S - row:column 0:0
+S - row:column 4:1
+O - row:column 0:3
+S - row:column 1:4
+O - row:column 3:0
+S - row:column 2:0
+S - row:column 2:1
+O - row:column 2:3
+O - row:column 3:2
+S - row:column 3:3
+S - row:column 4:2
+O - row:column 3:1
+O - row:column 4:3
+O - row:column 0:1
+O - row:column 4:0
+O - row:column 0:4
+S - row:column 1:3
+O - row:column 1:2
+S - row:column 1:0
+S - row:column 1:1
+O - row:column 2:4
+O - row:column 0:2
+Red Won!
+
+Red Won!
+
+Red Won!
+
+Red Won!
+
+Red Won!
+
+Red Won!
+

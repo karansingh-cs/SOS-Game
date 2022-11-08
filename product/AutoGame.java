@@ -1,72 +1,52 @@
 package product;
 
-import java.util.Random;
+import java.awt.*;
+import java.util.*;
 
-public class AutoGame extends Game {
-    private String autoPlayer;
+public class Auto extends Game {
+    Random random = new Random();
+    int so = random.nextInt(2);
 
-    public AutoGame() {
-        this("O");
-    }
-
-    public AutoGame(String player) {
-        this.autoPlayer = player;
+    public Auto() {
+        String autoPlayer = "Blue";
         if (autoPlayer == "Blue") {
-            makeFirstXMove();
+            blueRandomMove();
         }
     }
 
-    @Override
     public void resetGame() {
         super.resetGame();
-        if (autoPlayer == "Blue") {
-            makeFirstXMove();
-        }
     }
 
-    private void makeFirstXMove() {
-        Random random = new Random();
-        int position = random.nextInt(TOTALROWS * TOTALCOLUMNS);
-        super.makeMove(position / TOTALROWS, position % TOTALCOLUMNS);
-    }
-
-    @Override
-    public void makeMove(int row, int column) {
-        if (row >= 0 && row < TOTALROWS && column >= 0 && column < TOTALCOLUMNS
-                && buttons[row][column].getText() == "") {
-            super.makeMove(row, column);
-            if (turn == autoPlayer && getGameState() == GameState.PLAYING) {
-                makeAutoMove();
-            }
-        }
-    }
-
-    private void makeAutoMove() {
-        if (!makeWinningMove()) {
-            if (!blockOpponentWinningMove())
-                makeRandomMove();
-        }
-
-    }
-
-    private boolean makeWinningMove() {
-        return false;
-    }
-
-    private boolean blockOpponentWinningMove() {
-        return false;
-    }
-
-    private void makeRandomMove() {
+    public void makeRandomMove() {
         int numberOfEmptyCells = getNumberOfEmptyCells();
         Random random = new Random();
+        int so = random.nextInt(2);
         int targetMove = random.nextInt(numberOfEmptyCells);
         int index = 0;
-        for (int row = 0; row < TOTALROWS; ++row) {
-            for (int col = 0; col < TOTALCOLUMNS; ++col) {
-                if (buttons[row][col].getText() == "") {
+        for (int i = 0; i < getTotalRows(); ++i) {
+            for (int j = 0; j < getTotalColumns(); ++j) {
+                if (buttons[i][j].getText() == "") {
                     if (targetMove == index) {
-                        super.makeMove(row, col);
+                        if (getTurn() == "Blue") {
+                            while (buttons[i][j].getText().equals("")) {
+                                if (buttons[i][j].getText().equals("")) {
+                                    buttons[i][j].setForeground(Color.BLUE);
+                                    buttons[i][j].setText("S");
+                                    turn = (turn == "Blue") ? "Red" : "Blue";
+                                    break;
+                                }
+                            }
+                        } else if (getTurn() == "Red") {
+                            while (buttons[i][j].getText().equals("")) {
+                                if (buttons[i][j].getText().equals("")) {
+                                    buttons[i][j].setForeground(Color.RED);
+                                    buttons[i][j].setText("O");
+                                    turn = (turn == "Red") ? "Blue" : "Red";
+                                    break;
+                                }
+                            }
+                        }
                         return;
                     } else
                         index++;
@@ -75,16 +55,66 @@ public class AutoGame extends Game {
         }
     }
 
-     public int getNumberOfEmptyCells() {
-     int numberOfEmptyCells = 0;
-     for (int row = 0; row < TOTALROWS; ++row) {
-     for (int col = 0; col < TOTALCOLUMNS; ++col) {
-     if (buttons[row][col].getText() == "") {
-     numberOfEmptyCells++;
-     }
-     }
-     }
-     return numberOfEmptyCells;
-     }
+    public void blueRandomMove() {
+        int numberOfEmptyCells = getNumberOfEmptyCells();
+        Random random = new Random();
+        int bSO = random.nextInt(2);
+        int targetMove = random.nextInt(numberOfEmptyCells);
+        int index = 0;
+        for (int i = 0; i < getTotalRows(); ++i) {
+            for (int j = 0; j < getTotalColumns(); ++j) {
+                if (buttons[i][j].getText() == "") {
+                    if (targetMove == index) {
+                        if (getTurn() == "Blue") {
+                            if (buttons[i][j].getText().equals("")) {
+                                buttons[i][j].setForeground(Color.BLUE);
+                                buttons[i][j].setText("O");
+                                turn = (turn == "Blue") ? "Red" : "Blue";
+                            }
+                        }
+                        return;
+                    } else
+                        index++;
+                }
+            }
+        }
+    }
+
+    public void redRandomMove() {
+        int numberOfEmptyCells = getNumberOfEmptyCells();
+        Random random = new Random();
+        int rSO = random.nextInt(2);
+        int targetMove = random.nextInt(numberOfEmptyCells);
+        int index = 0;
+        for (int i = 0; i < getTotalRows(); ++i) {
+            for (int j = 0; j < getTotalColumns(); ++j) {
+                if (buttons[i][j].getText() == "") {
+                    if (targetMove == index) {
+                        if (getTurn() == "Red") {
+                            if (buttons[i][j].getText().equals("")) {
+                                buttons[i][j].setForeground(Color.RED);
+                                buttons[i][j].setText("O");
+                                turn = (turn == "Red") ? "Blue" : "Red";
+                            }
+                        }
+                        return;
+                    } else
+                        index++;
+                }
+            }
+        }
+    }
+
+    public int getNumberOfEmptyCells() {
+        int numberOfEmptyCells = 0;
+        for (int row = 0; row < TOTALROWS; ++row) {
+            for (int col = 0; col < TOTALCOLUMNS; ++col) {
+                if (buttons[row][col].getText() == "") {
+                    numberOfEmptyCells++;
+                }
+            }
+        }
+        return numberOfEmptyCells;
+    }
 
 }
